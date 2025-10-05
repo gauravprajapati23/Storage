@@ -698,3 +698,72 @@ h2::after {
         border-radius: 10px;
     }
 }
+
+.experience-container {
+  display: flex;
+  flex-direction: column; /* mobile view */
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .experience-container {
+    flex-direction: row; /* desktop: side by side */
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .experience-detail {
+    flex: 1 1 40%;
+    max-width: 400px;
+  }
+}
+
+.experience-detail {
+  background-color: white;
+  padding: 45px;
+  margin: 20px;
+  border-radius: 16px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  transition: transform 0.15s ease-out, box-shadow 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* 👇 Touch / Click Lift Animation 👇 */
+.experience-detail:active {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.18);
+}
+
+/* Optional subtle rebound animation */
+.experience-detail {
+  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.25s ease;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.social-icons a {
+  color: #333;
+  font-size: 30px;
+  text-decoration: none;
+  transition: transform 0.15s ease, color 0.3s;
+  padding: 5px;
+}
+
+/* icon ka bhi thoda touch feel */
+.social-icons a:active {
+  transform: scale(1.2);
+}
+
+.portfolio-i {
+  text-decoration: none;
+  text-align: center;
+  color: #696969;
+  display: block;
+  padding: 5px;
+  margin-bottom: 6px;
+}
